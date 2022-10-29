@@ -1,0 +1,40 @@
+.sidebar {
+}
+.title {
+    padding: 6px 0;
+}
+.content {
+    padding: 6px 0;
+    border-top: 1px solid var(--border-color);
+}
+.content-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-primary-transparent);
+        border-radius: 4px;
+        padding: 6px;
+
+        .content-title {
+            color: var(--color-primary);
+        }
+    }
+}
+.content-avatar {
+    margin-right: 6px;
+    width: 30px;
+    height: 30px;
+    // border-radius: 50%;
+    background: tomato;
+}
+.image {
+    width: inherit;
+    height: inherit;
+}
+.content-title {
+    font-weight: 500;
+    font-size: 1rem;
+}

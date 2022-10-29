@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
-  --color-primary: rgb(254, 73, 104);
-  --color-background: #f4f5f9;
+    --color-primary: #ff7751;
+    --color-primary-transparent: rgba(255, 119, 81, 0.2);
+    --color-background: #f4f5f9;
+    --color-text: #444;
 
-  --border-radius: 10px;
+    --border-radius: 10px;
+    --border-color: #ddd;
 
-  --wrapper-width: 1280px;
-  --wrapper-padding: 40px;
-  --wrapper-padding-mobile: 12px;
+    --wrapper-width: 1280px;
+    --wrapper-padding: 40px;
+    --wrapper-padding-mobile: 12px;
 }
 
 * {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
 }
