@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    background: #eee;
+    height: 30px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.search-icon {
+    display: flex;
+    width: 34px;
+    height: 30px;
+    font-size: 1rem;
+
+    .icon {
+        margin: auto;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.input {
+    flex: 1;
+    caret-color: var(--color-primary);
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 6px 0 0;
+}
