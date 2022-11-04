@@ -5,6 +5,7 @@
     --color-primary-transparent: rgba(255, 119, 81, 0.2);
     --color-background: #f4f5f9;
     --color-text: #444;
+    --color-white: #fff;
 
     --border-radius: 10px;
     --border-color: #ddd;
@@ -21,4 +22,14 @@
     margin: 0;
     padding: 0;
     color: var(--color-text);
+}
+
+body {
+    background: var(--color-background);
+}
+
+body,
+input,
+button {
+    font-size: 1rem;
 }
