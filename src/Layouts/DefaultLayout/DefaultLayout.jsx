@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import className from 'classnames/bind';
 
 import Sidebar from '~/components/Sidebar';
+import FollowMatch from '~/components/FollowMatch';
 import styles from './DefaultLayout.module.scss';
 
 const cx = className.bind(styles);
@@ -18,8 +19,8 @@ function DefaultLayout({ children }) {
           <div style={{ background: 'green' }} className={cx('body-content')}>
             {children}
           </div>
-          <div style={{ background: 'orange' }} className={cx('sidebar-right')}>
-            sidebar
+          <div style={{ background: '' }} className={cx('sidebar-right')}>
+            <FollowMatch />
           </div>
         </div>
         <div style={{ background: 'blue' }} className={cx('footer')}>

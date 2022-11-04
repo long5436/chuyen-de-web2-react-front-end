@@ -47,7 +47,7 @@ function Sidebar() {
   };
 
   return (
-    <div className={cx('sidebar')}>
+    <div className={cx('wrapper')}>
       <h2 className={cx('title')}>Title</h2>
       <div className={cx('actions')}>
         {fakeData.length > 1 && (
