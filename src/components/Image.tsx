@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import errImg from '~/assets/images/img-notfound.jpg';
 
-function Image({ src, alt, className }) {
+type Props = {
+  src: string;
+  alt: string;
+  className: string;
+};
+
+function Image({ src, alt, className }: Props) {
   const [imgSrc, setimgSrc] = useState(src);
 
   useEffect(() => {
@@ -15,11 +20,5 @@ function Image({ src, alt, className }) {
     </>
   );
 }
-
-Image.prototype = {
-  src: PropTypes.string,
-  alt: PropTypes.string,
-  className: PropTypes.object,
-};
 
 export default Image;
