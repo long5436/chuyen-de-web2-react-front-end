@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'bg-footer': '#64748B',
+      },
+    },
     container: {
       screens: {
         sm: '640px',
