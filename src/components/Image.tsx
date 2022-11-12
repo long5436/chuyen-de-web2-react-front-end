@@ -4,7 +4,7 @@ import errImg from '~/assets/images/img-notfound.jpg';
 type Props = {
   src: string;
   alt: string;
-  className: string;
+  className?: string;
 };
 
 function Image({ src, alt, className }: Props) {
