@@ -16,6 +16,7 @@
     "@vechaiui/core": "^0.6.0",
     "@vechaiui/react": "^0.2.2",
     "antd": "^4.24.1",
+    "axios": "^1.1.3",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.3.4",
     "prop-types": "^15.8.1",
