@@ -3,6 +3,7 @@ import Header from '~/components/Layouts/Header';
 import Footer from '~/components/Layouts/Footer';
 import Sidebar from '~/components/Layouts/Sidebar';
 import FollowMatch from '~/components/FollowMatch';
+import Uncle from '~/components/Uncle';
 type Props = {
   children: ReactNode;
 };
@@ -21,6 +22,7 @@ function DefaultLayout({ children }: Props) {
           <div className="flex-1">{children}</div>
           <div className="w-80">
             <FollowMatch />
+            <Uncle />
           </div>
         </div>
       </div>

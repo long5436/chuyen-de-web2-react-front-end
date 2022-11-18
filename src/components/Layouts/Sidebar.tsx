@@ -45,7 +45,7 @@ function Sidebar() {
   return (
     <>
       <div className="pointer-events-auto  max-w-sm rounded-lg bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0">
-        <h2 className="text-md font-bold py-2.5 px-3.5 dark:text-gray-300 text-center mb-3  border-b border-gray-200">
+        <h2 className="text-md font-bold py-2.5 px-3.5 text-[15px] dark:text-gray-300 text-center mb-3  border-b border-gray-200">
           Quốc gia{' '}
         </h2>
         <div className="flex h-10  px-3.5">

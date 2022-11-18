@@ -3,7 +3,7 @@ import Image from '~/components/Image';
 function FollowMatch() {
   return (
     <div className="max-w-sm rounded-lg bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-4">
-      <h2 className="text-md font-bold dark:text-gray-300 text-center mb-3  border-b border-gray-200">
+      <h2 className="text-md text-[15px] pb-2 font-bold dark:text-gray-300 text-center mb-3  border-b border-gray-200 dark:border-gray-400">
         Trận đấu đang theo dõi
       </h2>
 
