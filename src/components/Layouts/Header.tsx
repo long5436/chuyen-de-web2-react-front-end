@@ -36,7 +36,7 @@ function Header() {
       <div className="container mx-auto px-4 h-full">
         <div className="grid grid-col-3 grid-flow-col gap-0 h-full items-center">
           <div>
-            <h2 className="text-lg text-white">Football</h2>
+            <h2 className="text-lg text-white font-extrabold">Football</h2>
           </div>
           <div className="text-center">
             <div className="max-w-xs m-auto">
