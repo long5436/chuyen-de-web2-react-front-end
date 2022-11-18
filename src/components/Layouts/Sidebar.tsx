@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import Search from '~/components/Search';
 import Image from '~/components/Image';
@@ -31,13 +31,14 @@ function Sidebar() {
   // ])
 
   const [data, setData] = useState<Data>([]);
+  const [searchValue, setSearchValue] = useState<string>('');
 
   // useEffect(() => {
   //   console.log(fakeData);
   // }, [fakeData]);
 
   const backSidebar = (): void => {
-    // setFakeData((prev) => prev.slice(0, prev.length - 1));
+    setData((prev) => prev.slice(0, prev.length - 1));
   };
 
   const changeSidebar = (item: any): void => {
@@ -49,12 +50,14 @@ function Sidebar() {
   };
 
   const handleSeach = (value: string) => {
-    if (data.length > 1) {
-      const resultSeachData = data[data.length - 1].map((item: any) => {
-        if (item.country_name.toLowerCase().includes(value.toLowerCase())) return item;
-      });
+    if (data.length > 0) {
+      // if (value) {
+      //   const resultSeachData = data[data.length - 1].map((item: any) => {
+      //     if (item.country_name.toLowerCase().includes(value.toLowerCase())) return item;
+      //   });
+      // }
 
-      // console.log(resultSeachData);
+      setSearchValue(value);
     }
   };
 
@@ -93,16 +96,18 @@ function Sidebar() {
         <div className="border-t border-slate-400/20 py-3 px-3.5 h-[calc(100vh_-_20rem)] overflow-y-auto">
           {data.length > 0 &&
             data[data.length - 1].map((item: any, index: number) => {
-              return (
-                <div
-                  className="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white hover:stroke-slate-100 cursor-pointer"
-                  key={index}
-                  onClick={() => changeSidebar(item)}
-                >
-                  <Image src={item.image_url} alt="" className="h-5 w-5 mr-2" />
-                  {item.country_name}
-                </div>
-              );
+              if (item.country_name.toLowerCase().includes(searchValue.toLowerCase())) {
+                return (
+                  <div
+                    className="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white hover:stroke-slate-100 cursor-pointer"
+                    key={index}
+                    onClick={() => changeSidebar(item)}
+                  >
+                    <Image src={item.image_url} alt="" className="h-5 w-5 mr-2" />
+                    {item.country_name}
+                  </div>
+                );
+              }
             })}
         </div>
       </div>
