@@ -10,7 +10,7 @@ type Props = {
 
 function DefaultLayout({ children }: Props) {
   return (
-    <div className="dark:bg-slate-700 dark:text-gray-300 bg-slate-100">
+    <div className="dark:bg-slate-600 dark:text-gray-300 bg-slate-100">
       <Header />
       {/* body content*/}
       <div className="container mx-auto px-4">

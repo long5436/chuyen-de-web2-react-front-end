@@ -10,7 +10,7 @@ function Match() {
   return (
     <div className="w-full rounded-md  bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2">
       <div className="banner-content">
-        <h2 className="text-center text-[16px] font-extrabold p-2 border-b border-gray-200 dark:border-gray-400">
+        <h2 className="text-center dark:text-gray-300 text-[16px] font-extrabold p-2 border-b border-gray-200 dark:border-gray-500">
           Match Schedule
         </h2>
         <div className="group-content p-4 ">
@@ -21,8 +21,8 @@ function Match() {
           <div>
             {test.map((item: number, index: number) => {
               return (
-                <Link key={index} to="/" className="">
-                  <div className="match-top flex justify-between items-center bg-slate-100 rounded-md dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2">
+                <Link key={index} to="/detail" className="">
+                  <div className="match-top flex justify-between items-center bg-slate-100 rounded-md dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2 mb-3">
                     {/* <div className="match-time">
                   <p>00:00</p>
                 </div> */}
@@ -40,7 +40,7 @@ function Match() {
                         <p className="mt-1 ml-2">Đội B</p>
                       </div>
                     </div>
-                    <div className="star ">
+                    <div className="star  hover:text-amber-400 ">
                       <AiOutlineStar className="icon text-2xl" />
                     </div>
                   </div>
