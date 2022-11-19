@@ -1,33 +1,31 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import Search from '~/components/Search';
 
-// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+type Dark = { value: boolean };
+const dark: Dark = { value: false };
+
 if (
   localStorage.theme === 'dark' ||
   (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 ) {
   document.documentElement.classList.add('dark');
+  dark.value = true;
 } else {
   document.documentElement.classList.remove('dark');
 }
 
-// // Whenever the user explicitly chooses light mode
-// localStorage.theme = 'light';
-
-// // Whenever the user explicitly chooses dark mode
-// localStorage.theme = 'dark';
-
-// // Whenever the user explicitly chooses to respect the OS preference
-// localStorage.removeItem('theme');
-
 function Header() {
+  const [checkValue, setCheckValue] = useState<boolean>(() => dark.value);
+
   const handleDarkModeTaggle = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       localStorage.theme = 'dark';
       document.documentElement.classList.add('dark');
+      setCheckValue(true);
     } else {
       localStorage.theme = 'light';
       document.documentElement.classList.remove('dark');
+      setCheckValue(false);
     }
   };
 
@@ -52,7 +50,7 @@ function Header() {
               >
                 <input
                   type="checkbox"
-                  value=""
+                  checked={checkValue}
                   id="default-toggle"
                   className="sr-only peer"
                   onChange={(event) => handleDarkModeTaggle(event)}
