@@ -24,16 +24,17 @@ function Match() {
   return (
     <div className="w-full rounded-md  bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2">
       <div className="banner-content">
-        <h2 className="text-center dark:text-gray-300 text-[16px] font-extrabold p-2 border-b border-gray-200 dark:border-gray-500">
-          Match Schedule
+        <h2 className="text-center dark:text-gray-300 text-[16px] font-extrabold p-2 border-b dark:border-gray-500">
+          Lịch thi đấu
         </h2>
         {matches.length > 0 &&
           matches.map((item: any, index: number) => {
             return (
               <div key={index} className="group-content p-4 ">
                 <div className="country-match flex m-3">
-                  <Image src="" alt="" className="w-10 h-10" />
-                  <p className="match-name font-bold m-2 ">{item.leagueName}</p>
+                  <Image src="" alt="" className="w-10 h-10" />              
+                  <p className="match-name font-bold ">Tournaments</p>
+                  <p className="match-name text-xs">{item.leagueName}</p>
                 </div>
                 <div>
                   {item.matches.length > 0 &&
@@ -44,6 +45,9 @@ function Match() {
                             {/* <div className="match-time">
                   <p>00:00</p>
                 </div> */}
+                            <div className="match-time w-1/12 pl-4 ">
+                              <p className="font-extrabold"> 00:00</p>
+                            </div>
                             <div className="match ml-5 w-80">
                               <div className="item-team1 flex">
                                 <div className="logo-image">
@@ -54,6 +58,7 @@ function Match() {
                                   />
                                 </div>
                                 <p className="mt-1 ml-2">{e.homeTeam.name}</p>
+                                <div className="ret text-sm ">0</div>
                               </div>
                               <div className="item-team2 flex mt-1">
                                 <div className="logo-image">
@@ -64,9 +69,10 @@ function Match() {
                                   />
                                 </div>
                                 <p className="mt-1 ml-2">{e.awayTeam.name}</p>
+                                <div className="ret text-sm ">0</div>
                               </div>
                             </div>
-                            <div className="star  hover:text-amber-400 ">
+                            <div className="star hover:text-amber-400 ">
                               <AiOutlineStar className="icon text-2xl" />
                             </div>
                           </div>
