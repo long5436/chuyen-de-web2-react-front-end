@@ -1,6 +1,4 @@
-import { AiOutlineStar } from 'react-icons/ai';
 import Image from '~/components/Image';
-import { Link } from 'react-router-dom';
 
 function DetailMactch() {
   return (
@@ -25,6 +23,39 @@ function DetailMactch() {
           <p className="">Barcelona</p>
         </div>
       </div>
+      {/* <table className="tab">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Team</th>
+            <th>P</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+            <th>P</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The Sliding </td>
+            <td>Malcolm Lockyer</td>
+            <td>1961</td>
+          </tr>
+          <tr>
+            <td>Witchy Woman</td>
+            <td>The Eagles</td>
+            <td>1972</td>
+          </tr>
+          <tr>
+            <td>Shining Star</td>
+            <td>Earth, Wind, and Fire</td>
+            <td>1975</td>
+          </tr>
+        </tbody>
+      </table> */}
     </div>
   );
 }
