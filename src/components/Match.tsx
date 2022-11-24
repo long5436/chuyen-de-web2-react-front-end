@@ -32,9 +32,11 @@ function Match() {
             return (
               <div key={index} className="group-content p-4 ">
                 <div className="country-match flex m-3">
-                  <Image src="" alt="" className="w-10 h-10" />              
-                  <p className="match-name font-bold ">Tournaments</p>
-                  <p className="match-name text-xs">{item.leagueName}</p>
+                  <Image src="" alt="" className="w-10 h-10" />
+                  <div className="ml-4">
+                    <p className="match-name font-bold ">{item.leagueName}</p>
+                    <p className="match-name text-xs">{item.countryName}</p>
+                  </div>
                 </div>
                 <div>
                   {item.matches.length > 0 &&
@@ -42,22 +44,19 @@ function Match() {
                       return (
                         <Link key={e.leagueId} to="/detail" className="">
                           <div className="match-top flex justify-between items-center bg-slate-100 rounded-md dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2 mb-3">
-                            {/* <div className="match-time">
-                  <p>00:00</p>
-                </div> */}
                             <div className="match-time w-1/12 pl-4 ">
                               <p className="font-extrabold"> 00:00</p>
                             </div>
-                            <div className="match ml-5 w-80">
+                            <div className="match w-9/12 border-l-2 border-zinc-200">
                               <div className="item-team1 flex">
                                 <div className="logo-image">
                                   <Image
                                     src={getImageUrl(e.homeTeam.image)}
                                     alt=""
-                                    className="w-6 h-6"
+                                    className="w-6 h-6 ml-2"
                                   />
                                 </div>
-                                <p className="mt-1 ml-2">{e.homeTeam.name}</p>
+                                <p className="mt-1 ml-2 w-11/12">{e.homeTeam.name}</p>
                                 <div className="ret text-sm ">0</div>
                               </div>
                               <div className="item-team2 flex mt-1">
@@ -65,10 +64,10 @@ function Match() {
                                   <Image
                                     src={getImageUrl(e.awayTeam.image)}
                                     alt=""
-                                    className="w-6 h-6"
+                                    className="w-6 h-6 ml-2"
                                   />
                                 </div>
-                                <p className="mt-1 ml-2">{e.awayTeam.name}</p>
+                                <p className="mt-1 ml-2 ml-2 w-11/12">{e.awayTeam.name}</p>
                                 <div className="ret text-sm ">0</div>
                               </div>
                             </div>
