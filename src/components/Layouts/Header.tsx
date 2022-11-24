@@ -31,11 +31,13 @@ function Header() {
   };
 
   return (
-    <header className="h-14 border-b border-gray-200 dark:border-gray-500  shadow-sm bg-sky-400">
+    <header className="fixed w-full z-10 backdrop-blur h-14 border-b border-gray-200 dark:border-slate-600  shadow-sm supports-backdrop-blur:bg-white/60 dark:bg-transparent bg-white/60">
       <div className="container mx-auto px-4 h-full">
         <div className="grid grid-col-3 grid-flow-col gap-0 h-full items-center">
           <div>
-            <h2 className="text-lg text-white font-extrabold">Football</h2>
+            <Link to="/">
+              <h2 className="text-lg dark:text-gray-300 font-extrabold">Football</h2>
+            </Link>
           </div>
           <div className="text-center">
             <div className="max-w-xs m-auto">
@@ -44,7 +46,7 @@ function Header() {
           </div>
           <div className="text-right">
             <div className="flex justify-end">
-              <span className="mr-3 text-sm font-medium text-white">Chế độ tối</span>
+              <span className="mr-3 text-sm font-medium dark:text-gray-300">Chế độ tối</span>
               <label
                 htmlFor="default-toggle"
                 className="inline-flex relative items-center cursor-pointer"

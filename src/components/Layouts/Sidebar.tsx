@@ -78,7 +78,7 @@ function Sidebar() {
   return (
     <>
       <div className="pointer-events-auto  max-w-sm rounded-lg bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0">
-        <h2 className="text-md font-bold py-2.5 px-3.5 text-[15px] dark:text-gray-300 text-center mb-3  border-b border-gray-200 dark:border-gray-500">
+        <h2 className="text-md font-bold py-2.5 px-3.5 text-[15px] dark:text-gray-300 text-center mb-3  border-b border-gray-200 dark:border-slate-700">
           Quốc gia
         </h2>
         <div className="flex h-10  px-3.5">
@@ -90,10 +90,12 @@ function Sidebar() {
               <BiArrowBack className="h-6 w-6" />
             </div>
           )}
-          <Search callback={handleSeach} />
+          <div>
+            <Search callback={handleSeach} />
+          </div>
         </div>
 
-        <div className="border-t border-slate-400/20 py-3 px-3.5 h-[calc(100vh_-_20rem)] overflow-y-auto">
+        <div className="border-t border-slate-400/20 py-3 px-3.5 h-[calc(100vh_-_12rem)] overflow-y-auto">
           {data.length > 0 &&
             data[data.length - 1].map((item: any, index: number) => {
               if (item.country_name.toLowerCase().includes(searchValue.toLowerCase())) {

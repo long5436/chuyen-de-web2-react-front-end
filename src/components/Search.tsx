@@ -9,7 +9,10 @@ type Props = {
 const func = () => {};
 
 function Seach({ className, callback = func }: Props) {
-  const classes = 'bg-white relative pointer-events-auto dark:bg-slate-800/25' + ' ' + className;
+  const classes =
+    'relative border dark:border-slate-700 rounded-md pointer-events-auto bg-slate-100 dark:bg-slate-800' +
+    ' ' +
+    className;
   const [searchValue, setSearchValue] = useState<string>('');
   const typingTimeOut = useRef<null | NodeJS.Timeout>(null);
 
@@ -31,7 +34,7 @@ function Seach({ className, callback = func }: Props) {
     <div className={classes}>
       <button
         type="button"
-        className="hidden w-full lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-0 shadow-sm py-1.5 pl-2 pr-3 dark:bg-slate-700"
+        className="hidden w-full h-8 lg:flex items-center text-sm leading-6  text-slate-400  ring-0 py-1.5 pl-2 pr-3"
       >
         <FiSearch className="mr-3 flex-none text-xl cursor-default" />
 
@@ -40,7 +43,7 @@ function Seach({ className, callback = func }: Props) {
           onChange={(e) => handleSearchValue(e)}
           type="text"
           placeholder="Tìm kiếm..."
-          className="flex-1 h-5 w-full border-none focus:ring-0 px-0 dark:bg-slate-700 dark:text-gray-300"
+          className="flex-1 h-5 w-full border-none focus:ring-0 px-0 bg-transparent"
         />
       </button>
     </div>

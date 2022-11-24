@@ -1,30 +1,18 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import DefaultLayout from './Layouts/DefaultLayout';
 import { Home, DetailMatch } from '~/pages';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <DefaultLayout>
-              <Home />
-            </DefaultLayout>
-          }
-        />
-        <Route
-          path="/detail"
-          element={
-            <DefaultLayout>
-              <DetailMatch />
-            </DefaultLayout>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <Router>
+      <DefaultLayout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/detail" element={<DetailMatch />} />
+        </Routes>
+      </DefaultLayout>
+    </Router>
   );
 }
 
