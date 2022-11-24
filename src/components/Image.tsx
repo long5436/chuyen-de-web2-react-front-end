@@ -14,9 +14,13 @@ function Image({ src, alt, className }: Props) {
     if (!src) setimgSrc(errImg);
   });
 
+  const handleError = () => {
+    setimgSrc(errImg);
+  };
+
   return (
     <>
-      <img src={imgSrc} alt={alt} className={className} />
+      <img src={imgSrc} alt={alt} className={className} onError={handleError} />
     </>
   );
 }
