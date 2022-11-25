@@ -1,30 +1,25 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import DefaultLayout from './Layouts/DefaultLayout';
 import { Home, DetailMatch } from '~/pages';
+import { StoreProvider } from '~/reducers';
 
 function App() {
+  const helmetContext = {};
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <DefaultLayout>
-              <Home />
-            </DefaultLayout>
-          }
-        />
-        <Route
-          path="/detail"
-          element={
-            <DefaultLayout>
-              <DetailMatch />
-            </DefaultLayout>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <Router>
+      <HelmetProvider context={helmetContext}>
+        <StoreProvider>
+          <DefaultLayout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/detail/:id" element={<DetailMatch />} />
+            </Routes>
+          </DefaultLayout>
+        </StoreProvider>
+      </HelmetProvider>
+    </Router>
   );
 }
 

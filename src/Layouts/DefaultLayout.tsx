@@ -10,16 +10,18 @@ type Props = {
 
 function DefaultLayout({ children }: Props) {
   return (
-    <div className="dark:bg-slate-600 dark:text-gray-300 bg-slate-100">
+    <div className="dark:bg-gray-900 dark:text-gray-300 bg-slate-100">
       <Header />
       {/* body content*/}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pt-14">
         {/* <div className="grid grid-flow-col auto-cols-max justify-between gap-4 py-5"> */}
         <div className="flex justify-between gap-4 py-5">
           <div className="w-64">
             <Sidebar />
           </div>
-          <div className="flex-1">{children}</div>
+          <div className="flex-1">
+            <div>{children}</div>
+          </div>
           <div className="w-80">
             <FollowMatch />
             <Uncle />

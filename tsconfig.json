@@ -20,6 +20,6 @@
       "~/*": ["src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "src/reducers/.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
