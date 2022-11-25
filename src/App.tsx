@@ -9,7 +9,7 @@ function App() {
       <DefaultLayout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail" element={<DetailMatch />} />
+          <Route path="/detail/:id" element={<DetailMatch />} />
         </Routes>
       </DefaultLayout>
     </Router>

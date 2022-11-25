@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import Image from '~/components/Image';
 import ItemMatch from '~/components/ItemMatch';
