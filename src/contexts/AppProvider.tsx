@@ -1,5 +1,6 @@
 import { createContext, ReactNode } from 'react';
 
+// @ts-ignore
 export const AppContext = createContext();
 
 type Props = {

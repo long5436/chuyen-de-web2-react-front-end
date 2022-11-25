@@ -1,28 +1,36 @@
-import { useState, useEffect, useContext } from 'react';
-import { AiOutlineStar } from 'react-icons/ai';
+import { useEffect } from 'react';
 import Image from '~/components/Image';
 import ItemMatch from '~/components/ItemMatch';
-import { Link } from 'react-router-dom';
 import Api from '~/services';
-
-type Data = Array<Object>;
+import { actions } from '~/reducers';
+import { useStore } from '~/reducers';
 
 function Match() {
-  const [matches, setMatches] = useState<Data>([]);
+  const [states, dispatch] = useStore();
+  const { matchToday, followLeagueId } = states;
 
+  const localFollowLeagueId: string = localStorage.followLeagueId
+    ? localStorage.followLeagueId
+    : '';
+
+  // kiem tra neu co global state thi khong goi lai api
   useEffect(() => {
-    (async () => {
-      const data = await Api.getMatchesToday();
-      setMatches(data.data);
-      // console.log(data.data);
-    })();
+    // set gia tri id tran dau dang theo doi vao state
+    dispatch(actions.setFollowLeagueId(localFollowLeagueId));
+
+    if (matchToday.length <= 0) {
+      async function callApi() {
+        const data = await Api.getMatchesToday();
+        dispatch(actions.setMatch(data.data));
+      }
+
+      callApi();
+    }
   }, []);
 
   const getImageUrl = (value: string) => {
     return value ? `https://static.livescore.com/i2/fh/${value}.jpg` : '';
   };
-
-  // https://static.livescore.com/i2/fh/uefa-women-s-champions-league.jpg
 
   return (
     <div className="w-full rounded-md  bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2">
@@ -31,8 +39,8 @@ function Match() {
           Lịch thi đấu
         </h2>
         <div>
-          {matches.length > 0 &&
-            matches.map((item: any, index: number) => {
+          {matchToday.length > 0 &&
+            matchToday.map((item: any, index: number) => {
               return (
                 <div key={index} className="group-content px-4 pt-4">
                   <div className="country-match flex m-3">
