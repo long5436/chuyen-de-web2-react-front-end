@@ -8,11 +8,11 @@ type Props = {
 };
 
 function Image({ src, alt, className }: Props) {
-  const [imgSrc, setimgSrc] = useState(src);
+  const [imgSrc, setimgSrc] = useState(() => src);
 
   useEffect(() => {
     if (!src) setimgSrc(errImg);
-  });
+  }, []);
 
   const handleError = () => {
     setimgSrc(errImg);

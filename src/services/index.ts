@@ -8,6 +8,10 @@ const api = {
   getMatchesToday: () => {
     return instance.get('/api/matches/today');
   },
+
+  getMatchDetail: (id: string = '') => {
+    return instance.get(`/api/match/${id}`);
+  },
 };
 
 export default api;

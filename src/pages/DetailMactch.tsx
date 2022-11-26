@@ -1,6 +1,23 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Image from '~/components/Image';
+import Api from '~/services';
 
 function DetailMactch() {
+  const { id } = useParams();
+  const [detailData, setDetailData] = useState();
+
+  useEffect(() => {
+    async function callApi() {
+      if (id) {
+        const response = await Api.getMatchDetail(id);
+        console.log(response);
+      }
+    }
+
+    callApi();
+  }, []);
+
   return (
     <div className="detail-match w-full rounded-md  bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2">
       <div className="country-match flex m-3">
