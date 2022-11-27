@@ -101,7 +101,7 @@ function Sidebar() {
               if (item.country_name.toLowerCase().includes(searchValue.toLowerCase())) {
                 return (
                   <div
-                    className="flex items-center rounded-md p-1.5 hover:bg-indigo-600 hover:text-white hover:stroke-slate-100 cursor-pointer"
+                    className="flex items-center rounded-md p-1.5 hover:bg-orange-400 hover:text-white hover:stroke-slate-100 cursor-pointer"
                     key={index}
                     onClick={() => changeSidebar(item)}
                   >

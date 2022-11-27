@@ -1,7 +1,7 @@
 import { useEffect, useState, ReactNode } from 'react';
 import classnames from 'classnames';
-import Image from '~/components/Image';
 import FollowMatchTeam from './FollowMatchTeam';
+import FollowMatchInfo from './FollowMatchInfo';
 import { useStore, actions } from '~/reducers';
 import Api from '~/services';
 
@@ -57,16 +57,7 @@ function FollowMatch() {
         </div>
         <div className="flex justify-between mt-5">
           <FollowMatchTeam data={leagueDetail.detail.homeTeam} />
-          <div className="flex-1 text-center">
-            <div className="inline-block bg-gray-200 dark:bg-white/10 rounded-lg py-1 px-2 text-center">
-              <h2 className="text-3xl tracking-widest font-bold">{renderScore(leagueDetail)}</h2>
-            </div>
-            {leagueDetail.detail.minute === 'NS' ? (
-              <p className="datetime">{getTimeMatch(leagueDetail.detail.time.toString())}</p>
-            ) : (
-              <p className="datetime text-red-600">{leagueDetail.detail.minute}</p>
-            )}
-          </div>
+          <FollowMatchInfo matchDetail={leagueDetail.detail} />
           <FollowMatchTeam data={leagueDetail.detail.awayTeam} />
         </div>
       </div>

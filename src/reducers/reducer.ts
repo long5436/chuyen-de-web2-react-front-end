@@ -1,6 +1,6 @@
 const initState = {
   matchToday: [],
-  followLeagueId: '',
+  followLeagueId: localStorage.followLeagueId ? localStorage.followLeagueId : '',
   enableMobileMenu: false,
 };
 

@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import classnames from 'classnames';
 import Image from '~/components/Image';
+import FollowMatchTeam from '~/components/FollowMatchTeam';
+import FollowMatchInfo from '~/components/FollowMatchInfo';
 import Api from '~/services';
 
 function DetailMactch() {
@@ -12,7 +15,7 @@ function DetailMactch() {
     async function callApi() {
       if (id) {
         const response = await Api.getMatchDetail(id);
-        console.log(response.data.data);
+        // console.log(response.data.data);
         setDetailData(response.data.data);
       }
     }
@@ -31,25 +34,17 @@ function DetailMactch() {
             </title>
           </Helmet>
           <div className="detail-match w-full rounded-md  bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2">
-            <div className="country-match flex m-3">
-              <Image src="" alt="" className="w-10 h-10" />
-              <p className="match-name font-bold m-2 ">Name country</p>
+            <div className="country-match flex items-center m-3">
+              <Image src={detailData.image} alt="" className="w-10 h-10 m-2" />
+              <div>
+                <h3 className="font-bold text-lg">{detailData.matchName}</h3>
+                <p>{detailData.leagueName}</p>
+              </div>
             </div>
             <div className="flex px-20 justify-between m-5 bg-slate-200 p-4 rounded-md dark:bg-slate-800/25 dark:text-gray-300 shadow-xl">
-              <div className="">
-                <Image src="" alt="" className="w-12 h-12" />
-                <p className="">Barcelona</p>
-              </div>
-              <div className="text-center">
-                <h2 className="text-3xl tracking-widest font-bold">
-                  <span className="text-orange-500">2</span>:0
-                </h2>
-                <p className="datetime">19:30</p>
-              </div>
-              <div className="">
-                <Image src="" alt="" className="w-12 h-12" />
-                <p className="">Barcelona</p>
-              </div>
+              <FollowMatchTeam data={detailData.detail.homeTeam} />
+              <FollowMatchInfo matchDetail={detailData.detail} />
+              <FollowMatchTeam data={detailData.detail.awayTeam} />
             </div>
             {/* <table className="tab">
           <thead>
