@@ -1,6 +1,8 @@
 import { ChangeEvent, useRef, useState } from 'react';
-import Search from '~/components/Search';
 import { Link } from 'react-router-dom';
+import { AiOutlineMenu } from 'react-icons/ai';
+import Search from '~/components/Search';
+import { useStore, actions } from '~/reducers';
 
 type Dark = { value: boolean };
 const dark: Dark = { value: false };
@@ -17,6 +19,7 @@ if (
 
 function Header() {
   const [checkValue, setCheckValue] = useState<boolean>(() => dark.value);
+  const [state, dispatch] = useStore();
 
   const handleDarkModeTaggle = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
@@ -30,13 +33,23 @@ function Header() {
     }
   };
 
+  const handleToggleMobileMenu = (): void => {
+    dispatch(actions.toggleMobileMenu());
+  };
+
   return (
     <header className="fixed w-full z-10 backdrop-blur h-14 border-b border-gray-200 dark:border-slate-600  shadow-sm supports-backdrop-blur:bg-white/60 dark:bg-transparent bg-white/60">
       <div className="container mx-auto px-4 h-full">
         <div className="grid grid-col-3 grid-flow-col gap-0 h-full items-center">
-          <div>
-            <Link to="/">
-              <h2 className="text-lg dark:text-gray-300 font-extrabold">Football</h2>
+          <div className="flex content-center">
+            <button
+              className="flex lg:hidden h-8 w-8 bg-slate-100 dark:bg-slate-800 border dark:border-slate-700 rounded-md mr-2"
+              onClick={handleToggleMobileMenu}
+            >
+              <AiOutlineMenu className="text-xl m-auto" />
+            </button>
+            <Link to="/" className="inline-block h-8">
+              <h2 className="text-lg dark:text-gray-300 font-extrabold h-full">Football</h2>
             </Link>
           </div>
           <div className="text-center">
@@ -46,7 +59,9 @@ function Header() {
           </div>
           <div className="text-right">
             <div className="flex justify-end">
-              <span className="mr-3 text-sm font-medium dark:text-gray-300">Chế độ tối</span>
+              <span className="hidden lg:block mr-3 text-sm font-medium dark:text-gray-300">
+                Chế độ {checkValue ? 'tối' : 'sáng'}
+              </span>
               <label
                 htmlFor="default-toggle"
                 className="inline-flex relative items-center cursor-pointer"

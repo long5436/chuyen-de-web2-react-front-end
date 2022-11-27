@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         'bg-footer': '#64748B',
       },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
     },
     container: {
       screens: {

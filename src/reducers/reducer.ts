@@ -1,6 +1,7 @@
 const initState = {
   matchToday: [],
   followLeagueId: '',
+  enableMobileMenu: false,
 };
 
 const reducer = (state: InitState, action: Action) => {
@@ -14,6 +15,12 @@ const reducer = (state: InitState, action: Action) => {
       return {
         ...state,
         followLeagueId: action.payload,
+      };
+
+    case 'TOGGLE_MOBILE_MENU':
+      return {
+        ...state,
+        enableMobileMenu: !state.enableMobileMenu,
       };
 
     default:

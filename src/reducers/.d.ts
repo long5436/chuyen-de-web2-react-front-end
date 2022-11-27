@@ -1,5 +1,7 @@
 type InitState = {
-  matchToday: Array<any>;
+  matchToday: any[];
+  followLeagueId: string;
+  enableMobileMenu: boolean;
 };
 
 type Action = {

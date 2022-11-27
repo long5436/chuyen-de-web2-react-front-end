@@ -10,7 +10,7 @@ const func = () => {};
 
 function Seach({ className, callback = func }: Props) {
   const classes =
-    'relative border dark:border-slate-700 rounded-md pointer-events-auto bg-slate-100 dark:bg-slate-800' +
+    'relative w-full border dark:border-slate-700 rounded-md pointer-events-auto bg-slate-100 dark:bg-slate-800' +
     ' ' +
     className;
   const [searchValue, setSearchValue] = useState<string>('');
