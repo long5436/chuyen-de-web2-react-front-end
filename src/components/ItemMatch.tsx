@@ -45,7 +45,7 @@ function ItemMatch({ data }: Props) {
   return (
     <>
       <Link to={`/detail/${data.leagueId}`} className="">
-        <div className="flex justify-between items-center border dark:border-slate-700 bg-slate-100 rounded-lg dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 ring-0 p-2 mb-3 hover:bg-slate-200 dark:hover:bg-slate-800">
+        <div className="flex justify-between items-center border dark:border-slate-700 bg-slate-100 rounded-md dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 ring-0 p-2 mb-3 hover:bg-slate-200 dark:hover:bg-slate-800">
           <div className="w-10 mr-2 text-center">
             {data.minute === 'NS' ? (
               <p className="font-medium text-gray-400"> {getTimeMatch(data.time.toString())}</p>

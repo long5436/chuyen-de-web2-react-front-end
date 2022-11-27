@@ -12,4 +12,10 @@ const setFollowLeagueId = (payload: any) => {
   };
 };
 
-export { setMatch, setFollowLeagueId };
+const toggleMobileMenu = () => {
+  return {
+    type: 'TOGGLE_MOBILE_MENU',
+  };
+};
+
+export { setMatch, setFollowLeagueId, toggleMobileMenu };

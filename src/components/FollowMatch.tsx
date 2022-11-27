@@ -1,6 +1,7 @@
 import { useEffect, useState, ReactNode } from 'react';
 import classnames from 'classnames';
-import Image from '~/components/Image';
+import FollowMatchTeam from './FollowMatchTeam';
+import FollowMatchInfo from './FollowMatchInfo';
 import { useStore, actions } from '~/reducers';
 import Api from '~/services';
 
@@ -47,41 +48,17 @@ function FollowMatch() {
   return (
     leagueDetail && (
       <div className="max-w-sm rounded-lg bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-4">
-        <h2 className="text-md text-[15px] pb-2 font-bold dark:text-gray-300 text-center mb-3  border-b border-gray-200 dark:border-gray-500">
+        <h2 className="text-md text-[15px] pb-2 font-bold dark:text-gray-300 text-center mb-3  border-b border-gray-200 dark:border-slate-700">
           Trận đấu đang theo dõi
         </h2>
-
         <div className="text-center">
           <h4 className="text-lg font-medium dark:text-gray-300">{leagueDetail.leagueName}</h4>
           <p className="title-group">{leagueDetail.matchName}</p>
         </div>
         <div className="flex justify-between mt-5">
-          <div className="">
-            <Image
-              key={leagueDetail.detail.homeTeam.image}
-              src={leagueDetail.detail.homeTeam.image}
-              alt=""
-              className="w-12 h-12"
-            />
-            <p className="">{leagueDetail.detail.homeTeam.name}</p>
-          </div>
-          <div className="text-center">
-            <h2 className="text-3xl tracking-widest font-bold">{renderScore(leagueDetail)}</h2>
-            {leagueDetail.detail.minute === 'NS' ? (
-              <p className="datetime">{getTimeMatch(leagueDetail.detail.time.toString())}</p>
-            ) : (
-              <p className="datetime text-red-600">{leagueDetail.detail.minute}</p>
-            )}
-          </div>
-          <div className="">
-            <Image
-              key={leagueDetail.detail.awayTeam.image}
-              src={leagueDetail.detail.awayTeam.image}
-              alt=""
-              className="w-12 h-12"
-            />
-            <p className="">{leagueDetail.detail.awayTeam.name}</p>
-          </div>
+          <FollowMatchTeam data={leagueDetail.detail.homeTeam} />
+          <FollowMatchInfo matchDetail={leagueDetail.detail} />
+          <FollowMatchTeam data={leagueDetail.detail.awayTeam} />
         </div>
       </div>
     )

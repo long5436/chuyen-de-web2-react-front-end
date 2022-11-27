@@ -7,17 +7,10 @@ import { useStore } from '~/reducers';
 
 function Match() {
   const [states, dispatch] = useStore();
-  const { matchToday, followLeagueId } = states;
-
-  const localFollowLeagueId: string = localStorage.followLeagueId
-    ? localStorage.followLeagueId
-    : '';
+  const { matchToday } = states;
 
   // kiem tra neu co global state thi khong goi lai api
   useEffect(() => {
-    // set gia tri id tran dau dang theo doi vao state
-    dispatch(actions.setFollowLeagueId(localFollowLeagueId));
-
     if (matchToday.length <= 0) {
       async function callApi() {
         const data = await Api.getMatchesToday();

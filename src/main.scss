@@ -5,4 +5,44 @@ a,
 button {
     font-family: inter var;
     font-size: 1rem;
+    font-weight: 500;
 }
+
+.app-layout {
+    transform: translateX(0);
+    transition: ease-out 0.2s;
+}
+
+.app-layout-op {
+    transform: translateX(240px);
+    transition: ease-out 0.2s;
+}
+
+.mobile-menu {
+    transform: translateX(-100%);
+    animation: cl-menu ease-out 0.2s;
+    transition: ease-out 0.2s;
+}
+.open-mobile-menu {
+    transform: translateX(0);
+    animation: op-menu ease-out 0.2s;
+    transition: ease-out 0.2s;
+}
+
+// @keyframes op-menu {
+//     0% {
+//         transform: translateX(-100%);
+//     }
+//     100% {
+//         transform: translateX(0);
+//     }
+// }
+
+// @keyframes cl-menu {
+//     0% {
+//         transform: translateX(0);
+//     }
+//     100% {
+//         transform: translateX(-100%);
+//     }
+// }
