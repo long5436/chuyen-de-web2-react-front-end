@@ -15,7 +15,7 @@ function FollowMatch() {
       async function callApi() {
         const response = await Api.getMatchDetail(followLeagueId);
         setLeagueDatail(response.data.data);
-        console.log(response.data.data);
+        // console.log(response.data.data);
       }
       callApi();
     } else {
