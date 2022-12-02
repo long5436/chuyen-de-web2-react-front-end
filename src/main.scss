@@ -1,5 +1,37 @@
 @import url('https://rsms.me/inter/inter.css');
 
+:root {
+    --bg-scroll: #e2e2e2;
+    --scroll-thumb: rgba(85, 85, 85, 0.4);
+}
+
+[class='dark'] {
+    --bg-scroll: #4f4f4f;
+    --scroll-thumb: rgba(181, 181, 181, 0.4);
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--bg-scroll);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border: 4px solid var(--bg-scroll);
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
 body,
 a,
 button {
