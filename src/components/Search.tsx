@@ -8,7 +8,7 @@ type Props = {
 
 const func = () => {};
 
-function Seach({ className, callback = func }: Props) {
+function Search({ className, callback = func }: Props) {
   const classes =
     'relative w-full border dark:border-slate-700 rounded-md pointer-events-auto bg-slate-100 dark:bg-slate-800' +
     ' ' +
@@ -50,4 +50,4 @@ function Seach({ className, callback = func }: Props) {
   );
 }
 
-export default Seach;
+export default Search;
