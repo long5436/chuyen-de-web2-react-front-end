@@ -24,6 +24,13 @@ const api = {
   getMatchFromMenu(slug: string) {
     return instance.get(`api/matches/soccer/${slug}`);
   },
+  getTopscore(id: number) {
+    return instance.get(`api/topscorers/${id}`);
+  },
+
+  getTopscoreDetail(id: string) {
+    return instance.get(`api/topscorers/player/${id}`);
+  },
 };
 
 export default api;

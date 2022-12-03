@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Match from '~/components/Match';
+import Detailtopscore from './detailtopscore';
 
 function Home() {
   return (

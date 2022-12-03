@@ -24,7 +24,9 @@ const changeDate = (payload: any) => {
     payload,
   };
 };
-
+const addTopScore = (payload: any) => {
+  return {
+    type: 'ADD_TOPSCORE',
 const setSearchMatch = (payload: any) => {
   return {
     type: 'SET_SEARCH_MATCH',
@@ -32,4 +34,5 @@ const setSearchMatch = (payload: any) => {
   };
 };
 
-export { setMatch, setFollowLeagueId, toggleMobileMenu, changeDate, setSearchMatch };
+export { setMatch, setFollowLeagueId, toggleMobileMenu, changeDate, addTopScore };
+export { setMatch, setFollowLeagueId, toggleMobileMenu, changeDate, setSearchMatch, addTopScore };
