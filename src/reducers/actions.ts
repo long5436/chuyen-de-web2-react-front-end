@@ -18,4 +18,11 @@ const toggleMobileMenu = () => {
   };
 };
 
-export { setMatch, setFollowLeagueId, toggleMobileMenu };
+const changeDate = (payload: any) => {
+  return {
+    type: 'CHANGE_DATE',
+    payload,
+  };
+};
+
+export { setMatch, setFollowLeagueId, toggleMobileMenu, changeDate };

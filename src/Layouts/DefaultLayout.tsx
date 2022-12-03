@@ -6,6 +6,7 @@ import Sidebar from '~/components/Layouts/Sidebar';
 import MobileSidebar from '~/components/Layouts/MobileSidebar';
 import FollowMatch from '~/components/FollowMatch';
 import Uncle from '~/components/Uncle';
+import Calendar from '~/components/Layouts/Calendar';
 import { useStore } from '~/reducers';
 
 type Props = {
@@ -29,6 +30,7 @@ function DefaultLayout({ children }: Props) {
           {/* <div className="grid grid-flow-col auto-cols-max justify-between gap-4 py-5"> */}
           <div className="flex justify-between gap-4 py-5">
             <div className="hidden lg:block w-64">
+              <Calendar />
               <Sidebar />
             </div>
             <div className="flex-1">

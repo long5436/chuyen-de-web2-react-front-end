@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import Search from '~/components/Search';
@@ -37,6 +37,14 @@ function Header() {
     dispatch(actions.toggleMobileMenu());
   };
 
+  const handleSearch = (value: string) => {
+    console.log({ value });
+  };
+
+  useEffect(() => {
+    dispatch(actions.changeDate(1));
+  }, []);
+
   return (
     <header className="fixed w-full z-10 backdrop-blur h-14 border-b border-gray-200 dark:border-slate-600  shadow-sm supports-backdrop-blur:bg-white/60 dark:bg-transparent bg-white/60">
       <div className="container mx-auto px-4 h-full">
@@ -54,7 +62,7 @@ function Header() {
           </div>
           <div className="text-center">
             <div className="max-w-xs m-auto">
-              <Search />
+              <Search callback={handleSearch} />
             </div>
           </div>
           <div className="text-right">

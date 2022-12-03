@@ -1,26 +1,11 @@
 import { useEffect } from 'react';
 import Image from '~/components/Image';
 import ItemMatch from '~/components/ItemMatch';
-import Api from '~/services';
-import { actions } from '~/reducers';
-import { useStore } from '~/reducers';
+import { useStore, actions } from '~/reducers';
 
 function Match() {
   const [states, dispatch] = useStore();
   const { matchToday } = states;
-
-  // kiem tra neu co global state thi khong goi lai api
-  useEffect(() => {
-    if (matchToday.length <= 0) {
-      async function callApi() {
-        const data = await Api.getMatchesToday();
-
-        dispatch(actions.setMatch(data.data.data));
-      }
-
-      callApi();
-    }
-  }, []);
 
   return (
     <div className="w-full rounded-md  bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-2">
@@ -34,7 +19,9 @@ function Match() {
               return (
                 <div key={index} className="group-content px-4 pt-4">
                   <div className="country-match flex m-3">
-                    <Image src={item.image} alt="" className="w-8 h-8" />
+                    <div className="flex">
+                      <Image src={item.image} alt="" className="w-8 my-auto" />
+                    </div>
                     <div className="ml-4">
                       <p className="match-name font-bold ">{item.leagueName}</p>
                       <p className="match-name text-xs">{item.countryName}</p>

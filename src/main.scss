@@ -78,3 +78,17 @@ button {
 //         transform: translateX(-100%);
 //     }
 // }
+
+.react-calendar {
+    border: 0;
+    background: transparent;
+
+    button {
+        font-size: unset;
+    }
+}
+
+.react-calendar__tile--active {
+    background: #006edc !important;
+    color: white;
+}
