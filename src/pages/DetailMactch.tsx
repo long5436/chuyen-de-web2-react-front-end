@@ -39,7 +39,6 @@ function DetailMactch() {
     async function callApi() {
       if (id) {
         const response = await Api.getMatchDetail(id);
-        console.log(response.data.data);
         setDetailData(response.data.data);
       }
     }
@@ -53,7 +52,7 @@ function DetailMactch() {
         return data.summary ? <Summary data={data.summary} /> : <Fragment />;
 
       case 1:
-        return <Table />;
+        return data.table ? <Table data={data.table} /> : <Fragment />;
 
       case 2:
         return data.headToHead ? <HeadToHead data={data.headToHead} /> : <Fragment />;
@@ -75,7 +74,7 @@ function DetailMactch() {
           </Helmet>
           <div className="detail-match w-full rounded-md  bg-white dark:bg-slate-800/25 text-[0.8125rem] leading-5 text-slate-700 dark:text-gray-300 shadow-xl shadow-black/5 ring-0 p-3">
             <div className="country-match flex items-center">
-              <Image src={detailData.image} alt="" className="w-10 h-10 m-2" />
+              <Image src={detailData.image} alt="" className="w-10 m-2" />
               <div>
                 <h3 className="font-bold text-lg">{detailData.matchName}</h3>
                 <p>{detailData.leagueName}</p>
@@ -106,40 +105,6 @@ function DetailMactch() {
               })}
             </div>
             {renderItem(detailData)}
-
-            {/* <table className="tab">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Team</th>
-              <th>P</th>
-              <th>W</th>
-              <th>D</th>
-              <th>L</th>
-              <th>P</th>
-              <th>W</th>
-              <th>D</th>
-              <th>L</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>The Sliding </td>
-              <td>Malcolm Lockyer</td>
-              <td>1961</td>
-            </tr>
-            <tr>
-              <td>Witchy Woman</td>
-              <td>The Eagles</td>
-              <td>1972</td>
-            </tr>
-            <tr>
-              <td>Shining Star</td>
-              <td>Earth, Wind, and Fire</td>
-              <td>1975</td>
-            </tr>
-          </tbody>
-        </table> */}
           </div>
         </>
       )}

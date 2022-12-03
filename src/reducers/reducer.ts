@@ -2,6 +2,7 @@ const initState = {
   matchToday: [],
   followLeagueId: localStorage.followLeagueId ? localStorage.followLeagueId : '',
   enableMobileMenu: false,
+  date: '',
 };
 
 const reducer = (state: InitState, action: Action) => {
@@ -22,6 +23,13 @@ const reducer = (state: InitState, action: Action) => {
         ...state,
         enableMobileMenu: !state.enableMobileMenu,
       };
+
+    case 'CHANGE_DATE': {
+      return {
+        ...state,
+        date: action.payload,
+      };
+    }
 
     default:
       throw new Error(`Invalid action`);
