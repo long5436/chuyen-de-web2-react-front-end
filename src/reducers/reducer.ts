@@ -36,6 +36,8 @@ const reducer = (state: InitState, action: Action) => {
       return {
         ...state,
         topScoreData: action.payload,
+      };
+    }
     case 'SET_SEARCH_MATCH': {
       return {
         ...state,
