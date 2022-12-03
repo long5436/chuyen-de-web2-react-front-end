@@ -4,6 +4,7 @@ const initState = {
   enableMobileMenu: false,
   date: '',
   topScoreData: [],
+  searchMatch: '',
 };
 
 const reducer = (state: InitState, action: Action) => {
@@ -31,11 +32,14 @@ const reducer = (state: InitState, action: Action) => {
         date: action.payload,
       };
     }
-
     case 'ADD_TOPSCORE': {
       return {
         ...state,
         topScoreData: action.payload,
+    case 'SET_SEARCH_MATCH': {
+      return {
+        ...state,
+        searchMatch: action.payload,
       };
     }
 

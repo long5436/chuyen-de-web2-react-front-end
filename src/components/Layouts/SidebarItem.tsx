@@ -52,7 +52,7 @@ function SidebarItem({ title, type }: Props) {
 
   useEffect(() => {
     (async () => {
-      let data: AxiosResponse;
+      let data: any;
       if (type === 'country') {
         data = await api.getCountries();
       } else if (type === 'league') {
