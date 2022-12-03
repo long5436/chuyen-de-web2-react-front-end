@@ -25,4 +25,11 @@ const changeDate = (payload: any) => {
   };
 };
 
-export { setMatch, setFollowLeagueId, toggleMobileMenu, changeDate };
+const setSearchMatch = (payload: any) => {
+  return {
+    type: 'SET_SEARCH_MATCH',
+    payload,
+  };
+};
+
+export { setMatch, setFollowLeagueId, toggleMobileMenu, changeDate, setSearchMatch };

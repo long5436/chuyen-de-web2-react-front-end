@@ -38,7 +38,7 @@ function Header() {
   };
 
   const handleSearch = (value: string) => {
-    console.log({ value });
+    dispatch(actions.setSearchMatch(value));
   };
 
   useEffect(() => {
