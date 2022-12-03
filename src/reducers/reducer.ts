@@ -3,6 +3,7 @@ const initState = {
   followLeagueId: localStorage.followLeagueId ? localStorage.followLeagueId : '',
   enableMobileMenu: false,
   date: '',
+  topScoreData: [],
 };
 
 const reducer = (state: InitState, action: Action) => {
@@ -28,6 +29,13 @@ const reducer = (state: InitState, action: Action) => {
       return {
         ...state,
         date: action.payload,
+      };
+    }
+
+    case 'ADD_TOPSCORE': {
+      return {
+        ...state,
+        topScoreData: action.payload,
       };
     }
 

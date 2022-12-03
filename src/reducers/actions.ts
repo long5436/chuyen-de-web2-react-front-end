@@ -25,4 +25,11 @@ const changeDate = (payload: any) => {
   };
 };
 
-export { setMatch, setFollowLeagueId, toggleMobileMenu, changeDate };
+const addTopScore = (payload: any) => {
+  return {
+    type: 'ADD_TOPSCORE',
+    payload,
+  };
+};
+
+export { setMatch, setFollowLeagueId, toggleMobileMenu, changeDate, addTopScore };
